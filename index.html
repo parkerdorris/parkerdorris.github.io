@@ -17,8 +17,9 @@
 document.querySelector('form').addEventListener('submit', function(event) {
   event.stopPropagation();
   event.preventDefault();
-  document.write("Clicked submit");
+
   if (isWebBluetoothEnabled()) {
+    document.write("Web bluetooth enabled");
     onButtonClick();
   }
 });
