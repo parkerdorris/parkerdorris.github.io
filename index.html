@@ -3,7 +3,7 @@
 <p>The following samples show you some of the ways that you can use the <a href="https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web">Web Bluetooth API</a>.</p>
 
 <h3>Beginner</h3>
-
+{% include utils.html %}
 <form>
   <label for="allDevices">All Devices</label>
   <input id="allDevices" type="checkbox">
@@ -12,23 +12,15 @@
   <input id="namePrefix" type="text" size=17 placeholder="Device Name Prefix">
   <button>Get Bluetooth Device Info</button>
 </form>
-{% include js_snippet.html filename='device-info.js' %}
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-  .then(function(registration) {
-    console.log('Registration successful, scope is:', registration.scope);
-  })
-  .catch(function(error) {
-    console.log('Service worker registration failed, error:', error);
-  });
-}
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
 document.querySelector('form').addEventListener('submit', function(event) {
   event.stopPropagation();
   event.preventDefault();
 
   if (isWebBluetoothEnabled()) {
-    document.write("Web bluetooth enabled");
     onButtonClick();
   }
 });
