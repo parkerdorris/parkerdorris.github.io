@@ -25,8 +25,6 @@ Await)</a> sample.</p>
 
 {% include_relative _includes/datalist-services.html %}
 
-{% include output_helper.html %}
-
 {% include js_snippet.html filename='device-info.js' %}
 
 <script>
@@ -35,7 +33,6 @@ Await)</a> sample.</p>
     event.preventDefault();
 
     if (isWebBluetoothEnabled()) {
-      ChromeSamples.clearLog();
       onButtonClick();
     }
   });
