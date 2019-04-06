@@ -12,7 +12,7 @@
   <input id="namePrefix" type="text" size=17 placeholder="Device Name Prefix">
   <button>Get Bluetooth Device Info</button>
 </form>
-
+{% include js_snippet.html filename='device-info.js' %}
 <script>
   if('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
