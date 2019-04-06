@@ -7,12 +7,7 @@ icon_url: icon.png
 index: index.html
 ---
 
-{% include_relative _includes/intro.html %}
 
-<p>This sample illustrates the use of the Web Bluetooth API to retrieve basic
-device information from a nearby Bluetooth Low Energy Device. You may want to
-check out the <a href="device-info-async-await.html">Device Info (Async
-Await)</a> sample.</p>
 
 <form>
   <label for="allDevices">All Devices</label>
@@ -23,7 +18,7 @@ Await)</a> sample.</p>
   <button>Get Bluetooth Device Info</button>
 </form>
 
-{% include_relative _includes/datalist-services.html %}
+{% include datalist-services.html %}
 
 {% include js_snippet.html filename='device-info.js' %}
 
